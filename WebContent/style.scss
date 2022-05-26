@@ -1,0 +1,28 @@
+body {
+	margin: 0px;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1440px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	width: 100%;
+}
+
+.p-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-formgroup-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.p-field {
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}

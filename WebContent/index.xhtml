@@ -7,9 +7,27 @@
 
 	<h:head>
 		<title>Index</title>
+		<link rel="stylesheet" type="text/css" href="style.scss" media="screen" />
 	</h:head>
 
 	<h:body>
+		<div class="container">
+			<h:form id="formulario">
+				<p:panel id="panel" header="Cadastro">
+		
+					<p:growl id="messages" showDetail="true" />
+	                
+	                <div class="p-formgroup-inline">
+					    <div class="p-field">
+					        <p:inputText id="description" type="text" placeholder="Descrição" />
+					    </div>
+					    <p:commandButton value="Cadastrar"
+							action="#"
+							ajax="false" />	
+					</div>
+				</p:panel>
+			</h:form>
+		</div>
 	</h:body>
 
 </html>
