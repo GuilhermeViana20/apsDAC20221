@@ -49,6 +49,9 @@ public class JogoBean {
 	}
 
 	public List<Jogo> getLista() {
+		if(lista == null) {
+			lista = JogoDao.listar();
+		}
 		return lista;
 	}
 
