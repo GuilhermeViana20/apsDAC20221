@@ -15,7 +15,6 @@ public class Jogo {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
 	private Integer id;
 	
 	@Column(name = "descricao")

@@ -1,20 +1,18 @@
 package bean;
 
+import java.lang.reflect.Field;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
 import dao.JogoDao;
 import entidade.Jogo;
 
-
-@ManagedBean(name = "jogoBean")
-@ViewScoped
+@ManagedBean
 public class JogoBean {
 	
 	private Jogo jogo = new Jogo();
@@ -24,11 +22,13 @@ public class JogoBean {
 	public String salvar() {
 		try {
 			jogo.setDataCriacao(new Date());
-			Class<Jogo> clazz = Jogo.class;
-			for(var i = 1; i <= 10; i++) {
+
+			for(int i = 1; i <= 10; i++) {
 				Random aleatorio = new Random();
-			    int valor = aleatorio.nextInt();
-				clazz.getField('v'+Integer.toString(i)).set(valor, valor);
+				Integer valor = aleatorio.nextInt(30) + 1;
+			    Field ageJogo = jogo.getClass().getDeclaredField("v"+i);
+			    ageJogo.setAccessible(true);
+			    ageJogo.set(jogo, valor);
 			}
 			
 			JogoDao.salvar(jogo);

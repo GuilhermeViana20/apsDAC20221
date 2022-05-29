@@ -10,7 +10,6 @@ import javax.persistence.Query;
 import entidade.Jogo;
 import util.JPAUtil;
 
-@Entity
 public class JogoDao {
 	
 	public static void salvar(Jogo jogo)
