@@ -19,13 +19,14 @@
 	                
 	                <div class="p-formgroup-inline">
 					    <div class="p-field">
-					        <p:inputText id="description" type="text" placeholder="Descrição" />
+					        <p:inputText id="descricao" name="descricao" value="#{jogoBean.jogo.descricao}" type="text" placeholder="Descrição" />
 					    </div>
 					    <p:commandButton value="Cadastrar"
-							action="#"
+							action="#{jogoBean.salvar}"
 							ajax="false" />	
 					</div>
 				</p:panel>
+				
 			</h:form>
 		</div>
 	</h:body>
