@@ -50,6 +50,41 @@ public class JogoBean {
 		}
 		return null;		
 	}
+	
+	public String editar(Integer id) {
+        Jogo j = JogoDao.getById(id);
+        if(j != null){
+        	jogo.setId(j.getId());
+			jogo.setDescricao(j.getDescricao());
+			jogo.setDataCriacao(j.getDataCriacao());
+			jogo.setV1(j.getV1());
+			jogo.setV2(j.getV2());
+			jogo.setV3(j.getV3());
+			jogo.setV4(j.getV4());
+			jogo.setV5(j.getV5());
+			jogo.setV6(j.getV6());
+			jogo.setV7(j.getV7());
+			jogo.setV8(j.getV8());
+			jogo.setV9(j.getV9());
+			jogo.setV10(j.getV10());
+        }else{
+        	FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_INFO, "Erro!", "Erro jogo não encontrado."));
+        }
+        return "atualizar";
+	}
+	
+	public String atualizar() {
+		try {
+			JogoDao.atualizar(jogo);
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_INFO, "SUCESSO!", "Jogo atualizado com sucesso."));
+		} catch (Exception e) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_INFO, "Erro!", "Erro ao atualizar o jogo."));
+		}
+		return null;
+	}
 
 	public Jogo getJogo() {
 		return jogo;

@@ -31,27 +31,27 @@ public class JogoDao {
 		entityManager.close();
 	}
 	
-	public static void update(Jogo jogo) {
-		EntityManager s = JPAUtil.criarEntityManager();
-		s.getTransaction().begin();
-		s.merge(jogo);
-		s.getTransaction().commit();
-		s.close();
+	public static void atualizar(Jogo jogo) {
+		EntityManager em = JPAUtil.criarEntityManager();
+		em.getTransaction().begin();
+		em.merge(jogo);
+		em.getTransaction().commit();
+		em.close();
 	}
 	
 	public static Jogo getById(Integer id) {
-		EntityManager j = JPAUtil.criarEntityManager();
-		j.getTransaction().begin();
-		Jogo jogo = j.find(Jogo.class, id);
-		j.close();
+		EntityManager em = JPAUtil.criarEntityManager();
+		em.getTransaction().begin();
+		Jogo jogo = em.find(Jogo.class, id);
+		em.close();
 		return jogo;
 	}
 	
 	public static List<Jogo> listar(){
-		EntityManager j = JPAUtil.criarEntityManager();
-		Query q = j.createQuery("select e from Jogo e");
-		List<Jogo> lista = q.getResultList();
-		j.close();
+		EntityManager em = JPAUtil.criarEntityManager();
+		Query query = em.createQuery("SELECT jogo FROM Jogo jogo");
+		List<Jogo> lista = query.getResultList();
+		em.close();
 		return lista;
 	}
 	

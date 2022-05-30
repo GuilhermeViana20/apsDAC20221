@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Atualizar</title>
+	<link rel="stylesheet" type="text/css" href="style.scss" media="screen" />
+</h:head>
+
+<h:body>
+	<div class="container">
+	
+		<h:form id="formulario">
+	
+			<p:panel id="panel" header="Atualizar" style="margin-top: 40px;">
+	
+				<p:growl id="messages" showDetail="true" />
+				
+				<div class="p-formgroup-inline">
+				
+					<div class="p-field">
+						<p:outputLabel for="id" value="Id" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.id}" id="id" required="true"/>
+					</div>
+		
+					<div class="p-field">
+						<p:outputLabel for="descricao" value="Descrição" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.descricao}" id="descricao" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="dataCriacao" value="Data de Criação" />
+						<p:datePicker class="w-100" style="width: 100%"
+							value="#{jogoBean.jogo.dataCriacao}" id="dataCriacao" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v1" value="V1" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v1}" id="v1" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v2" value="V2" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v2}" id="v2" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v3" value="V3" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v3}" id="v3" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v4" value="V4" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v4}" id="v4" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v5" value="V5" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v5}" id="v5" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v6" value="V6" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v6}" id="v6" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v7" value="V7" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v7}" id="v7" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v8" value="V8" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v8}" id="v8" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v9" value="V9" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v9}" id="v9" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel for="v10" value="V10" />
+						<p:inputText class="w-100" value="#{jogoBean.jogo.v10}" id="v10" required="true"/>
+					</div>
+					
+					<div class="p-field">
+						<p:outputLabel class="label-oculto mb-3" value="." />
+						<p:commandButton class="w-100 mt-3" value="Atualizar" action="#{jogoBean.atualizar}"
+						update="formulario" />
+					</div>
+	
+				</div>
+			</p:panel>
+	
+		</h:form>
+		
+		<div class="ui-g-6">
+			<p:link outcome="listagem" value="Listagem" />
+		</div>
+		
+	</div>
+
+</h:body>
+
+</html>
