@@ -78,7 +78,7 @@
                                 update="formulario"
                             />&nbsp;
                             <p:commandButton value="Pares" styleClass="ui-button-primary"
-                                action="#{jogoBean.pares(jogo.id)}"
+                                action="#{jogoBean.pares(jogo)}"
                                 ajax="false"
                                 update="formulario"
                             />
@@ -92,6 +92,6 @@
             <div style="margin-top: 20px" class="ui-g-12">
                 <p:link class="btn-link" outcome="index" value="Voltar" /> 
             </div>
-        </div>
+	</div>
     </h:body>
 </html>

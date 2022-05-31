@@ -18,6 +18,7 @@ public class JogoBean {
 	private Jogo jogo = new Jogo();
 	private List<Jogo> lista;
 	private int count;
+	private String retorno;
 
 	public String salvar() {
 		try {
@@ -86,6 +87,41 @@ public class JogoBean {
 		return null;
 	}
 
+	public void pares(Jogo jogo) throws NoSuchFieldException, SecurityException {
+		retorno = "";
+		if(jogo.getV1() % 2 == 0) {
+			retorno = retorno + jogo.getV1().toString() + ",";
+		}
+		if(jogo.getV2() % 2 == 0) {
+			retorno = retorno + jogo.getV2().toString() + ",";
+		}
+		if(jogo.getV3() % 2 == 0) {
+			retorno = retorno + jogo.getV3().toString() + ",";
+		}
+		if(jogo.getV4() % 2 == 0) {
+			retorno = retorno + jogo.getV4().toString() + ",";
+		}
+		if(jogo.getV5() % 2 == 0) {
+			retorno = retorno + jogo.getV5().toString() + ",";
+		}
+		if(jogo.getV6() % 2 == 0) {
+			retorno = retorno + jogo.getV6().toString() + ",";
+		}
+		if(jogo.getV7() % 2 == 0) {
+			retorno = retorno + jogo.getV7().toString() + ",";
+		}
+		if(jogo.getV8() % 2 == 0) {
+			retorno = retorno + jogo.getV8().toString() + ",";
+		}
+		if(jogo.getV9() % 2 == 0) {
+			retorno = retorno + jogo.getV9().toString() + ",";
+		}
+		if(jogo.getV10() % 2 == 0) {
+			retorno = retorno + jogo.getV10().toString() + ",";
+		}
+		FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Número pares", retorno));
+	}
+	
 	public Jogo getJogo() {
 		return jogo;
 	}
@@ -111,6 +147,14 @@ public class JogoBean {
 
 	public void setCount(int count) {
 		this.count = count;
+	}
+
+	public String getRetorno() {
+		return retorno;
+	}
+
+	public void setRetorno(String retorno) {
+		this.retorno = retorno;
 	}
 	
 	
