@@ -23,12 +23,12 @@ body {
 }
 
 .p-field {
-    margin-right: 1rem;
+	margin-right: 1rem;
     margin-bottom: 1rem;
-}
-
-.p-field input {
-	margin-top: 5px;
+    
+	input {
+		margin-top: 5px;
+	}
 }
 
 .label-oculto {
@@ -47,4 +47,20 @@ body {
 
 .w-100 {
 	width: 100%;	
+}
+
+.btn-link {
+	padding: 0.5rem;
+	border: 1px solid #2196F3;
+	border-radius: 5px;
+}
+
+.btn-link:hover {
+	color: white !important;
+	background-color: #2196F3;
+	text-decoration: none !important;
+}
+
+.p-0 {
+	padding: 0px;	
 }

@@ -157,11 +157,4 @@ public class Jogo {
 	public void setV10(Integer v10) {
 		this.v10 = v10;
 	}
-	
-	
-	
-
-	
-	
-
 }

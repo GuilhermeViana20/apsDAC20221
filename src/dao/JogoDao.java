@@ -1,9 +1,6 @@
 package dao;
 
-import java.math.BigInteger;
 import java.util.List;
-
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
@@ -54,13 +51,4 @@ public class JogoDao {
 		em.close();
 		return lista;
 	}
-	
-	public static Integer count(){
-		EntityManager j = JPAUtil.criarEntityManager();
-		Query q = j.createNativeQuery("select count(id) from Jogo");
-		int count = ((BigInteger) q.getSingleResult()).intValue();
-		j.close();
-		return count;
-	}
-
 }
